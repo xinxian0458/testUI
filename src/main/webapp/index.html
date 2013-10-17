@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html ng-app="indexApp">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<meta http-equiv="CACHE-CONTROL" content="private"/>
+		<meta http-equiv="Content-Encoding" content="gzip"/>
+		<title>ECS-VPC Client Portal</title>
+		<link href="img/logo/favicon.ico" type="image/ico" rel="shortcut icon" />
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="css/subStyle.css" />
+		<link rel="stylesheet" href="css/login.css" />
+		<script src="js/libs/angular.js"></script>
+		<script src="js/libs/angular-cookies.js"></script>
+		<script src="js/libs/angular-resource.js"></script>
+		<script src="js/app/index.js"></script>
+	</head>
+	<body>
+		<div class="container_01">
+			<!-- Portal Header -->
+			<div id="header">
+				<div class="grid_01">
+					<div class="sitelogo">
+						<span class="hp-logo sitelogo-image"></span>
+					</div>
+					<div>
+						<span class="site-font">ECS-VPC Client Portal</span>
+					</div>
+				</div>
+				<div class="grid_02">
+					<div class="headerlinks credentials-text"></div>
+				</div>
+			</div>
+			<!-- Portal Search -->
+			<div id="header-search" class="hpmp-x-repeat-sprite">
+				<div class="show-all-categories" id="show-all-nav">
+					<span class="show-all-categories-text">Show All Services</span>
+					<span class="show-all-categories-arrow ui-icon"></span>
+				</div>
+				<div class="search-and-go">
+					<form id="search-query" action="#newservice" method="get" name="search-box">
+						<input id="search-content" class="hpmp-x-repeat-sprite search-text-area" type="text" placeholder="Search Services" autocomplete="off" value="" name="searchTerms" maxlength="200">
+						<button id="button" class="go-button" >
+							GO
+						</button>
+					</form>
+				</div>
+			</div>
+			<div class="hpmp-x-repeat-sprite" id="below-header-search">
+				<div class="awsmp-main-sprite gateway-below-shop-all"></div>
+			</div>
+			<div class="clear"></div>
+			<div class="page-content" id="content-container" ng-controller="CatalogListCtrl">
+				<!-- show the category text as nav when click the category-->
+				<div class="grid_6 alpha">
+					<div id="search-ladder" class="search-ladder"></div>
+				</div>
+				<div ng-repeat="catalog in catalog_list">
+					<div class="search-result-row">
+						<div class="image">
+						</div>
+						<div class="detail">
+							<div class="product-title">
+								<a class="product-name" href="">{{ catalog.name }}</a>
+								<a style="font-size: 12px;font-weight: normal;padding-left: 10px;color: #EE7711;" href="">Detail</a>
+							</div>
+							<div class="info">
+								<div class="product-version">
+									{{ catalog.version }} |
+								</div>
+								<div class="product-author">
+									{{ catalog.active }}
+								</div>
+								<div class="clear"></div>
+								<div class="search-result-row-hr">
+									<hr class="hidden">
+								</div>
+								<div class="product-description">
+									{{ catalog.name }}
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--
+					<div class="search-result-row">
+											<div class="image">
+												<img style="width: 110px;height: 110px" ng-src="{{ catalog.iconUrl }}">
+											</div>
+											<div class="detail">
+												<div class="product-title">
+													<a class="product-name" href="">{{ catalog.displayName }}</a>
+													<a style="font-size: 12px;font-weight: normal;padding-left: 10px;color: #EE7711;" href="">Detail</a>
+												</div>
+												<div class="info">
+													<div class="product-version">
+														{{ catalog.state.displayName }} |
+													</div>
+													<div class="product-author">
+														{{ catalog.artifactType.displayName }}
+													</div>
+													<div class="clear"></div>
+													<div class="search-result-row-hr">
+														<hr class="hidden">
+													</div>
+													<div class="product-description">
+														{{ catalog.description }}
+													</div>
+												</div>
+											</div>
+										</div>-->
+					
+					<div class="search-result-row-hr">
+						<hr class="hidden">
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<hr />
+				<div class="links">
+					<ul>
+						<li>
+							<a href="http://welcome.hp.com/country/us/en/privacy.html">Privacy Statement</a>
+						</li>
+						<li>
+							<a href="http://www8.hp.com/us/en/privacy/terms-of-use.html">Terms of Use</a>
+						</li>
+						<li>
+							<a href="http://www.hpcloud.com/contact_us">Contact Us</a>
+						</li>
+						<li>
+							<a href="http://hp.com/">hp.com</a>
+						</li>
+					</ul>
+				</div>
+				<div class="copyright">
+					© 2013 Hewlett-Packard Development Company, L.P.
+				</div>
+			</div>
+		</div>
+		<!--
+		Your name: <input type="text" ng-model="yourname" placeholder="World">
+		<hr>
+		Hello {{yourname || 'World'}}!-->
+
+	</body>
+</html>

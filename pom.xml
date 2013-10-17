@@ -1,0 +1,21 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.hp.poc</groupId>
+	<artifactId>ECS-VPC</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>HTMLUI</name>
+	<description>ECS-VPC Client Portal</description>
+	<build>
+		<finalName>ECS-VPC</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<webappDirectory>D:${file.separator}apache-tomcat-6.0.32${file.separator}webapps${file.separator}ECS-VPC</webappDirectory>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
