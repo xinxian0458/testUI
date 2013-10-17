@@ -58,57 +58,30 @@
 				<div ng-repeat="catalog in catalog_list">
 					<div class="search-result-row">
 						<div class="image">
+							<img style="width: 110px;height: 110px" ng-src="{{ catalog.iconUrl }}">
 						</div>
 						<div class="detail">
 							<div class="product-title">
-								<a class="product-name" href="">{{ catalog.name }}</a>
+								<a class="product-name" href="">{{ catalog.displayName }}</a>
 								<a style="font-size: 12px;font-weight: normal;padding-left: 10px;color: #EE7711;" href="">Detail</a>
 							</div>
 							<div class="info">
 								<div class="product-version">
-									{{ catalog.version }} |
+									{{ catalog.state.displayName }} |
 								</div>
 								<div class="product-author">
-									{{ catalog.active }}
+									{{ catalog.artifactType.displayName }}
 								</div>
 								<div class="clear"></div>
 								<div class="search-result-row-hr">
 									<hr class="hidden">
 								</div>
 								<div class="product-description">
-									{{ catalog.name }}
+									{{ catalog.description }}
 								</div>
 							</div>
 						</div>
 					</div>
-					<!--
-					<div class="search-result-row">
-											<div class="image">
-												<img style="width: 110px;height: 110px" ng-src="{{ catalog.iconUrl }}">
-											</div>
-											<div class="detail">
-												<div class="product-title">
-													<a class="product-name" href="">{{ catalog.displayName }}</a>
-													<a style="font-size: 12px;font-weight: normal;padding-left: 10px;color: #EE7711;" href="">Detail</a>
-												</div>
-												<div class="info">
-													<div class="product-version">
-														{{ catalog.state.displayName }} |
-													</div>
-													<div class="product-author">
-														{{ catalog.artifactType.displayName }}
-													</div>
-													<div class="clear"></div>
-													<div class="search-result-row-hr">
-														<hr class="hidden">
-													</div>
-													<div class="product-description">
-														{{ catalog.description }}
-													</div>
-												</div>
-											</div>
-										</div>-->
-					
 					<div class="search-result-row-hr">
 						<hr class="hidden">
 					</div>
